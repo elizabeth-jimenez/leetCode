@@ -12,5 +12,25 @@ function twoSum(numbers, target) {
     }
 }
 
-console.log(twoSum([1,2,3,4,8,9,10,13], 7)); // [3,4]
-console.log(twoSum([1,2,3,4], 3)); // [1,2]
+function twoSumNotBruteF(numbers, target) {
+    let lP = 0;
+    let rP = numbers.length - 1;
+
+    while(lP < rP) {
+        const sum = numbers[lP] + numbers[rP];
+
+        if(sum === target) {
+            return [lP + 1, rP + 1];
+        }
+
+        if(sum > target) {
+            rP--;
+        }
+        if(sum < target) {
+            lP++;
+        }
+    }
+}
+
+console.log(twoSumNotBruteF([1,2,3,4,8,9,10,13], 7)); // [3,4]
+console.log(twoSumNotBruteF([1,2,3,4], 3)); // [1,2]
