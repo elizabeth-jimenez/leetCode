@@ -7,7 +7,7 @@ function jump(nums) {
         return 0;
     }
 
-    while(i < nums.length) {
+    while(i < target) {
         if(i + nums[i] >= target){
             jumps++;
             return jumps;
